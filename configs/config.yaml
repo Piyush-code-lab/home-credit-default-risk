@@ -1,0 +1,46 @@
+data:
+  train_path: "application_train.csv"
+  bureau_path: "bureau.csv"
+  previous_app_path: "previous_application.csv"
+  installments_path: "installments_payments.csv"
+  pos_cash_path: "POS_CASH_balance.csv"
+  credit_card_path: "credit_card_balance.csv"
+
+preprocessing:
+  missing_threshold: 0.60
+  outlier_cap_percentile: 0.99
+  label_encode_cols:
+    - NAME_CONTRACT_TYPE
+    - CODE_GENDER
+    - FLAG_OWN_CAR
+    - FLAG_OWN_REALTY
+    - EMERGENCYSTATE_MODE
+    - OCCUPATION_TYPE
+    - ORGANIZATION_TYPE
+  onehot_cols:
+    - NAME_TYPE_SUITE
+    - NAME_INCOME_TYPE
+    - NAME_EDUCATION_TYPE
+    - NAME_FAMILY_STATUS
+    - NAME_HOUSING_TYPE
+    - WEEKDAY_APPR_PROCESS_START
+    - HOUSETYPE_MODE
+    - WALLSMATERIAL_MODE
+
+model:
+  n_estimators: 650
+  learning_rate: 0.042087176574120796
+  max_depth: 5
+  min_child_weight: 20
+  subsample: 0.8263347355600547
+  colsample_bytree: 0.7603338269876135
+  scale_pos_weight: 11.38
+  random_state: 42
+
+output:
+  model_path: "models/credit_risk_model_final.pkl"
+  features_path: "models/feature_columns_final.json"
+
+evaluation:
+  test_size: 0.2
+  random_state: 42

@@ -1,0 +1,16 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.ipynb
+application_train.csv
+application_test.csv
+bureau.csv
+bureau_balance.csv
+previous_application.csv
+installments_payments.csv
+POS_CASH_balance.csv
+credit_card_balance.csv
+credit_card_balance.csv
+HomeCredit_columns_description.csv
+sample_submission.csv
